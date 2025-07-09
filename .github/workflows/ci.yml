@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '* * * * *'
+    - cron: '35 15 * * *'
 
 jobs:
   autogreen:
@@ -22,5 +22,5 @@ jobs:
           git config --local user.name "el3954789"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          git commit --allow-empty -m "try update"
+          git commit --allow-empty -m "update"
           git push
